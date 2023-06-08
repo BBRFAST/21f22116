@@ -1,0 +1,44 @@
+public class Salesbranchs {
+    public static void main(String[] args) {
+        
+        int[][] salesNumber = {
+            
+            {110, 160, 220, 150, 200, 100},
+            
+            {85, 130, 230, 100, 180, 165},
+            
+            {210, 170, 290, 120, 125, 160}
+        };
+
+        
+        int ConsiderMonths = 6;
+
+        
+        for (int branch = 0; branch < salesNumber.length; branch++) {
+            int[] branchSales = salesNumber[branch];
+
+            
+            int[] sixMonthsSales = new int[ConsiderMonths];
+            System.arraycopy(branchSales, branchSales.length - ConsiderMonths, sixMonthsSales, 0, ConsiderMonths);
+
+            
+            int lowestSale = Integer.MAX_VALUE;
+            int highestSale = Integer.MIN_VALUE;
+
+            for (int sales : sixMonthsSales) {
+                if (sales < lowestSale) {
+                    lowestSale = sales;
+                }
+                if (sales > highestSale) {
+                    highestSale = sales;
+                }
+            }
+
+            
+            int leastSelling = -1;
+            for (int i = 0; i < sixMonthsSales.length; i++) {
+                if (sixMonthsSales[i] == lowestSale) {
+                    leastSelling = i;
+                    break;
+                }
+            }
