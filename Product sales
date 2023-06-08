@@ -42,3 +42,13 @@ public class Salesbranchs {
                     break;
                 }
             }
+System.out.println("branch " + (branch + 1) + ":");
+            System.out.println("Lowest selling product: " + lowestSale);
+            System.out.println("Highest selling product: " + highestSale);
+
+            
+
+            System.out.println();
+        }
+    }
+}
